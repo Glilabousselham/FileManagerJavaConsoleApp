@@ -6,11 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a6d8d696-a347-4d14-a011-f78f4fafcfb2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Command/AbstractCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/command/AbstractCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Command/ICommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/command/ICommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Commands/ListDirCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/ListDirCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Commands/PWDCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/PWDCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Program.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/ChangeDirCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/ChangeDirCommand.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
