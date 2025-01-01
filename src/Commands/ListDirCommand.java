@@ -1,8 +1,10 @@
-package Command;
+package Commands;
+
+import Command.AbstractCommand;
 
 import java.io.File;
 
-public class ListDirCommand extends AbstractCommand{
+public class ListDirCommand extends AbstractCommand {
 
     public ListDirCommand(File file){
         super(file);

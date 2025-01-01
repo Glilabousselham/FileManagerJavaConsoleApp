@@ -1,6 +1,6 @@
 import Command.AbstractCommand;
-import Command.ListDirCommand;
-import Command.PWDCommand;
+import Commands.ListDirCommand;
+import Commands.PWDCommand;
 
 import java.io.File;
 import java.lang.reflect.InvocationTargetException;

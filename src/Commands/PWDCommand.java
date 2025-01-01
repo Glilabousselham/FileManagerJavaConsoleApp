@@ -1,8 +1,10 @@
-package Command;
+package Commands;
+
+import Command.AbstractCommand;
 
 import java.io.File;
 
-public class PWDCommand extends AbstractCommand{
+public class PWDCommand extends AbstractCommand {
 
     public PWDCommand(File file){
         super(file);
