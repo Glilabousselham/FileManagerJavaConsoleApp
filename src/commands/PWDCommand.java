@@ -21,4 +21,8 @@ public class PWDCommand extends AbstractCommand {
     public static String getCommandName(){
         return "pwd";
     }
+
+    public static String describe()  throws  Exception{
+        return ("pwd : print absolute working dir path");
+    }
 }

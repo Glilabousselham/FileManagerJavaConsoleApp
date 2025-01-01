@@ -45,6 +45,11 @@ public class Program {
 
                 try {
 
+                    if(userStringCommand.commandName.compareTo("help") == 0){
+                        this.describeCommands();
+                        return;
+                    }
+
                     String commandName = commandClass.getMethod("getCommandName").invoke(null).toString();
 
                     if (commandName.compareTo(userStringCommand.commandName) == 0) {
@@ -112,6 +117,16 @@ public class Program {
             this.commandArg = commandArr.length >= 2 ? commandArr[1] : "";
 
 
+        }
+    }
+
+
+
+    public void describeCommands() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+        for (Class<? extends AbstractCommand> command : this.commandsList){
+            String decription = command.getMethod("describe").invoke(null).toString();
+
+            System.out.println(decription);
         }
     }
 

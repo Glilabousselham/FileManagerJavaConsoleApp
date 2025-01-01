@@ -24,5 +24,7 @@ public class ListDirCommand extends AbstractCommand {
         return "ls";
     }
 
-
+    public static String describe()  throws  Exception{
+        return ("ls : list current directory files and dires");
+    }
 }

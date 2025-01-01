@@ -46,4 +46,7 @@ public class ChangeDirCommand extends AbstractCommand {
     public static String getCommandName() {
         return "cd";
     }
+    public static String describe()  throws  Exception{
+        return ("cd : allows only one step ex (cd test | cd .. )");
+    }
 }
