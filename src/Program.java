@@ -2,6 +2,7 @@ import command.AbstractCommand;
 import command.WorkingDir;
 import commands.ChangeDirCommand;
 import commands.ListDirCommand;
+import commands.MakeDirCommand;
 import commands.PWDCommand;
 
 import java.io.File;
@@ -22,6 +23,7 @@ public class Program {
         this.commandsList.add(ListDirCommand.class);
         this.commandsList.add(PWDCommand.class);
         this.commandsList.add(ChangeDirCommand.class);
+        this.commandsList.add(MakeDirCommand.class);
 
 
 
