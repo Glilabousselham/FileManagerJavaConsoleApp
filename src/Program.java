@@ -1,6 +1,8 @@
-import Command.AbstractCommand;
-import Commands.ListDirCommand;
-import Commands.PWDCommand;
+import command.AbstractCommand;
+import command.WorkingDir;
+import commands.ChangeDirCommand;
+import commands.ListDirCommand;
+import commands.PWDCommand;
 
 import java.io.File;
 import java.lang.reflect.InvocationTargetException;
@@ -9,15 +11,23 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.function.Consumer;
 
+
 public class Program {
 
-    private File workingDirectory;
+    private WorkingDir workingDirectory;
 
     private List<Class<? extends AbstractCommand>> commandsList = new ArrayList<>();
 
     public Program() {
         this.commandsList.add(ListDirCommand.class);
         this.commandsList.add(PWDCommand.class);
+        this.commandsList.add(ChangeDirCommand.class);
+
+
+
+
+
+
     }
 
 
@@ -27,7 +37,7 @@ public class Program {
         String currentDirectory = System.getProperty("user.dir");
 
         // initialize the working directory
-        this.workingDirectory = new File(currentDirectory);
+        this.workingDirectory = new WorkingDir(new File(currentDirectory)) ;
 
         this.loop((UserStringCommand userStringCommand) -> {
             for (Class<? extends AbstractCommand> commandClass : commandsList) {
@@ -40,7 +50,7 @@ public class Program {
                     if (commandName.compareTo(userStringCommand.commandName) == 0) {
 
                         // create object from the called command
-                        AbstractCommand command = commandClass.getDeclaredConstructor(File.class).newInstance(this.workingDirectory);
+                        AbstractCommand command = commandClass.getDeclaredConstructor(WorkingDir.class).newInstance(this.workingDirectory);
 
                         command.execute(userStringCommand.commandArg);
 
@@ -71,7 +81,7 @@ public class Program {
         do {
 
             // read user input
-            System.out.print("File Manager (" + this.workingDirectory.getAbsolutePath() + ") $ ");
+            System.out.print("File Manager (" + this.workingDirectory.getWorkingDir().getAbsolutePath() + ") $ ");
             userStringCommand = new UserStringCommand(scanner.nextLine());
             System.out.println();
 

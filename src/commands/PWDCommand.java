@@ -1,19 +1,18 @@
-package Commands;
+package commands;
 
-import Command.AbstractCommand;
-
-import java.io.File;
+import command.AbstractCommand;
+import command.WorkingDir;
 
 public class PWDCommand extends AbstractCommand {
 
-    public PWDCommand(File file){
+    public PWDCommand(WorkingDir file){
         super(file);
     }
 
 
     @Override
     public void execute(String command) {
-        System.out.println(this.currentDirectory.getAbsolutePath());
+        System.out.println(this.currentDirectory.getWorkingDir().getAbsolutePath());
     }
 
 

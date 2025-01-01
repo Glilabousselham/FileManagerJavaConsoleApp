@@ -1,19 +1,18 @@
-package Commands;
+package commands;
 
-import Command.AbstractCommand;
-
-import java.io.File;
+import command.AbstractCommand;
+import command.WorkingDir;
 
 public class ListDirCommand extends AbstractCommand {
 
-    public ListDirCommand(File file){
+    public ListDirCommand(WorkingDir file){
         super(file);
     }
 
     @Override
     public void execute(String command) {
 
-        String[] listFiles =  this.currentDirectory.list();
+        String[] listFiles =  this.currentDirectory.getWorkingDir().list();
 
         for (String item : listFiles){
             System.out.println(item);

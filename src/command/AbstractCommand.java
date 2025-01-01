@@ -1,12 +1,12 @@
-package Command;
+package command;
 
 import java.io.File;
 
 public abstract class AbstractCommand implements ICommand {
 
-    protected File currentDirectory;
+    protected WorkingDir currentDirectory;
 
-    public AbstractCommand(File currentDirectory) {
+    public AbstractCommand(WorkingDir currentDirectory) {
         this.currentDirectory = currentDirectory;
     }
 
